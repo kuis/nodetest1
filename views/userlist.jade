@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1.
+    User List
+  ul(style="list-style: none")
+    each user, i in userlist
+      li
+        a.col-md-4(href="users/#{user._id}")= user.first_name + " " + user.last_name
+        a.col-md-4(href="users/#{user._id}") edit
+        a.col-md-4(data-confirm="Are you sure?", rel="nofollow", data-method="delete", href="users/delete/#{user._id}") delete
