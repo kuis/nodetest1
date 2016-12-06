@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  .registerForm(ng-controller="RegisterController")
+    .form-group
+      label.col-sm-2.control-label(for='first name') First Name
+      .col-sm-10
+        input#first_name.form-control(type='text', name='first_name', placeholder='First Name', value='', ng-model='user.first_name')
+    .form-group
+      label.col-sm-2.control-label(for='last name') Last Name
+      .col-sm-10
+        input#last_name.form-control(type='text', name='last_name', placeholder='Last Name', value='', ng-model='user.last_name')
+    .form-group
+      label.col-sm-2.control-label(for='age') Age
+      .col-sm-10
+        input#age.form-control(type='text', name='age', placeholder='Age', value='', ng-model='user.age')
+    .col-sm-10.col-sm-offset-2
+      input#btnSubmit.btn.btn-primary(name='submit', type='submit', value='Sign Up', ng-click="registerUser()")

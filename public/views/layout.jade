@@ -1,0 +1,29 @@
+doctype html
+html(ng-app="mainApp")
+  head
+    title= title
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="bower_components/angular/angular.min.js")    <!-- load angular -->
+    script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+
+
+    link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="javascripts/app.js")
+    script(src="javascripts/services/user.service.js")
+    script(src="javascripts/router.js")
+    script(src="javascripts/controllers/user.controller.js")
+
+  body
+    nav.navbar.navbar-inverse(role="navigation", style="padding-left:130px;")
+      ul.nav.navbar-nav
+        li.active
+          a(ui-sref='users.list')
+            | Home
+            span.sr-only (current)
+        li
+          a(ui-sref='users.list({"pageState": "users.new"})') Sign In
+        li
+          a(ui-sref='users.list({"pageState": "users.new"})') Sign Up
+    block content
