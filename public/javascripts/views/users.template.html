@@ -1,7 +1,7 @@
-<div class="users-list" ng-show="pageState=='users'" ng-init="init()">
+<div class="users-list" ng-show="pageState=='users'">
   <table class="table table-responsive">
     <tbody>
-      <tr ng-repeat="user in users.data track by $index">
+      <tr ng-repeat="user in users track by $index">
         <td>
           <a href="javascript:;" ng-click="editUser(user._id)">{{user.first_name + " " + user.last_name}}</a>
         </td>
